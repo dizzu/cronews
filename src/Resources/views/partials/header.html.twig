@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>CroNews</title>
+<!-- plugins:css -->
+<link rel="stylesheet" href="/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="/vendors/css/vendor.bundle.base.css">
+<!-- endinject -->
+<!-- inject:css -->
+<link rel="stylesheet" href="/css/style.css">
+<!-- endinject -->
+<link rel="shortcut icon" href="/images/favicon.png" />
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=8b2dqhoj0hrj9erwza2vhldm7v9qtveiercgogxbgusajpwj"></script>
+<script>
+  tinymce.init({
+    selector: '.richtextarea',
+    plugins: 'preview searchreplace autolink directionality visualblocks visualchars fullscreen image link media template advlist lists wordcount imagetools textpattern help',
+  toolbar: 'formatselect | bold italic strikethrough forecolor backcolor | link image media pageembed | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent | removeformat | addcomment',
+  image_advtab: true,
+  content_css: [
+    '//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i&subset=latin-ext',
+    '//www.tiny.cloud/css/codepen.min.css'
+  ],
+  height: 500,
+  contextmenu_never_use_native: true,
+  elementpath: false,
+  branding: false,
+  media_filter_html: false,
+  content_css : '/css/style.css'
+  });
+  </script>
+  <style>
+    .form-control.tinyMCE{height: unset;}
+    html {
+      font-size: 18px !important;
+    }
+
+    mark, .mark {
+      padding: .2em;
+      background-color: yellow !important;
+  }
+  .navbar.default-layout-navbar .navbar-brand-wrapper {
+      height: 90px;
+  }
+  </style>
+</head>
+
+<body>
+<div class="container-scroller">
+<!-- partial:/partials/_navbar.html -->
+<nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+    <a  href="/admin"><img style="width: 160px;     margin-top: 100px;" src="/images/logo.png" alt="logo"/></a>
+    <a class="navbar-brand brand-logo-mini" href="/admin"><img src="/images/logo-mini.svg" alt="logo"/></a>
+  </div>
+  <div class="navbar-menu-wrapper d-flex align-items-stretch">
+    <div class="search-field d-none d-md-block">
+    </div>
+    <ul class="navbar-nav navbar-nav-right">
+      <li class="nav-item nav-profile dropdown">
+        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+          <div class="nav-profile-img">
+            <img src="/images/avatar.svg" alt="image" width="128" >
+            <span class="availability-status online"></span>
+          </div>
+          <div class="nav-profile-text">
+            <p class="mb-1 text-black">Teacher</p>
+          </div>
+        </a>
+      </li>
+      <li class="nav-item nav-logout d-none d-lg-block">
+      <a class="nav-link" href="#">
+      <i class="mdi mdi-power"></i>
+        <span style="margin-left: 10px;">Logout</span>
+      </a>
+      </li>
+</nav>
+<!-- partial -->
+<div class="container-fluid page-body-wrapper">
+  <!-- partial:/partials/_sidebar.html -->
+  <nav class="sidebar sidebar-offcanvas" id="sidebar" >
+    <ul class="nav" style="margin-top: 122px !important;">
+      <li class="nav-item nav-profile">
+        <a href="#" class="nav-link">
+          <div class="nav-profile-image">
+            <img src="/images/avatar.svg" alt="profile">
+            <span class="login-status online"></span> <!--change to offline or busy as needed-->
+          </div>
+          <div class="nav-profile-text d-flex flex-column">
+            <span class="font-weight-bold mb-2">Teacher</span>
+          </div>
+          <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">
+          <span class="menu-title">Lecții</span>
+          <i class="mdi mdi-home menu-icon"></i>
+        </a>
+      </li>
+      <li class="nav-item sidebar-actions">
+        <span class="nav-link">
+          <a href="/admin/lessons/add">
+            <button class="btn btn-block btn-lg btn-gradient-primary" style="padding-left: 0px; padding-right: 0px;">+ Adaugă o lecție</button>
+          </a>
+        </span>
+      </li>
+    </ul>
+  </nav>
+  <!-- partial -->
+  <div class="main-panel">

@@ -1,0 +1,23 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          {{ lesson.request_3|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          {{ text|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}

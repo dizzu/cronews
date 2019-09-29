@@ -1,0 +1,49 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          {{ lesson.request_1|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+            <h1>Textul evidențiat de profesor</h1>
+            <div class="highlight_target" style="position: relative;">
+                <div class="highlight_text2" id="highlight_text2" style="margin-top: 50px;">
+                  {{ lesson.highlighted_text|raw }}
+                </div>
+                <button style="display: none; margin-top: 15px;" id="ok_btn"  onclick="return surroundSelection();" class="btn btn-gradient-primary mr-3">OK</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+            <h1>Textul evidențiat de tine</h1>
+            <div class="highlight_target" style="position: relative;">
+                <div class="highlight_text2" id="highlight_text2" style="margin-top: 50px;">
+                  {{ highlighted_text|raw }}
+                </div>
+                <button style="display: none; margin-top: 15px;" id="ok_btn"  onclick="return surroundSelection();" class="btn btn-gradient-primary mr-3">OK</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 grid-margin stretch-card">
+        <a href="/lesson/{{ lesson.id }}/2">
+          <button type="submit" class="btn btn-gradient-primary mr-2">Mergi la subiectul următor</button>
+        </a>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}

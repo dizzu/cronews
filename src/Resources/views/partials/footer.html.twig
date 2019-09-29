@@ -1,0 +1,80 @@
+<!-- content-wrapper ends -->
+        <!-- partial:/partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="/vendors/js/vendor.bundle.base.js"></script>
+  <script src="/vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="/js/off-canvas.js"></script>
+  <script src="/js/misc.js"></script>
+  <script>
+    $('textarea.text').bind('input propertychange', function() {
+      if ($(this).val()) {
+        $('.highlight_target').show();
+        $('.highlight_text').html($(this).val().replace(/\r\n|\r|\n/g,"<br />"));
+      } else {
+        $('.highlight_target').hide();
+      }
+    });
+
+    $('.text_div').on( 'change keyup keydown paste cut', 'textarea', function (){
+        if ($(this).val()) {
+            $(this).height(0).height(this.scrollHeight);
+        }
+    }).find( 'textarea' ).change();
+
+    function surroundSelection() {
+        var span = document.createElement("mark");
+
+        if (window.getSelection && window.getSelection().baseNode.parentNode.id=="highlight_text") {
+            var sel = window.getSelection();
+            if (sel.rangeCount) {
+                var range = sel.getRangeAt(0).cloneRange();
+                try {
+                    range.surroundContents(span);
+                } catch(err) {
+                    console.log(err);
+                }
+                sel.removeAllRanges();
+                sel.addRange(range);
+                $('#highlighted_text').val($('#highlight_text').html());
+            }
+        }
+        return false;
+    }
+
+    document.onselectionchange = () => {
+        var selection = window.getSelection();
+        var selectionStart = selection.baseOffset;
+        var selectionEnd = selection.focusOffset;
+        if(selectionStart > selectionEnd) selectionEnd = [selectionStart, selectionStart = selectionEnd][0];
+
+        var resultObject = {start: selectionStart, end: selectionEnd, text: selection.toString()};
+        console.log(selection);
+        if (selection.toString() && window.getSelection().baseNode.parentNode.id=="highlight_text") {
+            $('#ok_btn').show();
+        } else {
+            $('#ok_btn').hide();
+        }
+    };
+  </script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+</body>
+
+</html>

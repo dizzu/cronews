@@ -1,0 +1,48 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="page-header">
+    <h3 class="page-title">
+      Lecții
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>
+                  #
+                </th>
+                <th>
+                  Titlul lecției
+                </th>
+                <th>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for lesson in lessons %}
+              <tr>
+                <td>
+                  {{ lesson.id }}
+                </td>
+                <td>
+                  {{ lesson.title|raw }}
+                </td>
+                <td>
+                  <a href="/admin/lessons/responses/{{ lesson.id }}">
+                    <button type="submit" class="btn btn-gradient-primary mr-2">Vezi răspunsuri</button>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% include('partials/footer.html.twig') %}

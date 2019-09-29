@@ -1,0 +1,26 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{ lesson.title|raw }}</h1>
+
+          <div style="margin-top: 40px">
+            {{ lesson.request_3|raw }}
+            <div style="margin-top: 40px">
+            {{ lesson.highlighted_text|raw }}
+          </div>
+          </div>
+
+          <form method="post" class="forms-sample" style="margin-top: 50px;">
+            <textarea class="form-control richtextarea" name="text" rows="16"></textarea>
+            <button type="submit" class="btn btn-gradient-primary mr-2" style="margin-top: 30px;">Trimite răspunsul</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}

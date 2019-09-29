@@ -1,0 +1,67 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="page-header">
+    <h3 class="page-title">
+      Adăugați o lecție nouă
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Bine ați venit în formularul de adăugare a unei lecții noi</h4>
+          <!-- <p class="card-description">
+            Basic form elements
+          </p> -->
+          <form method="post" class="forms-sample">
+            <div class="form-group">
+              <label for="exampleInputName1">Titlu lecție</label>
+              <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="title">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail3">Descriere a lecției</label>
+              <textarea class="form-control richtextarea" rows="16" name="request"></textarea>
+            </div>
+            <div class="form-group text_div">
+              <label>Textul de studiat</label>
+              <textarea class="form-control text" name="text" rows="16"></textarea>
+              <div class="highlight_target" style="display: none; position: relative;">
+                <h3 style="margin-top: 10px;">Subliniați părțile de interes din textul de mai jos și faceți click pe butonul OK după fiecare selecție:</h3><br>
+                <div class="highlight_text" id="highlight_text"></div>
+                <button style="display: none;" id="ok_btn"  onclick="return surroundSelection();" class="btn btn-gradient-primary mr-3">OK</button>
+              </div>
+            </div>
+            <input type="hidden" name="highlighted_text" id="highlighted_text" />
+            <h4><b>Exercițiul 1: </b></h4>
+            <div class="form-group">
+              <label>Cerința exercițiului (ex: subliniați prin selectarea textului părțile..)</label>
+              <textarea class="form-control richtextarea" name="request_1" rows="16"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Explicații și ghid de verificare înainte de vizualizarea scorului</label>
+              <textarea class="form-control richtextarea" name="explanations_1" rows="16"></textarea>
+            </div>
+            <h4><b>Exercițiul 2: </b></h4>
+            <div class="form-group">
+              <label>Cerința exercițiului (ex: rescrieți sub forma unui articol de presă textul prezentat)</label>
+              <textarea class="form-control richtextarea" name="request_2" rows="16"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Cuvintele cheie care ați dori să se regăsească în textul rescris</label>
+              <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="tags" >
+            </div>
+            <h4><b>Exercițiul 3: </b></h4>
+            <div class="form-group">
+              <label>Cerința exercițiului (ex: Creați o postare de social media prin care să promovați articolul creat)</label>
+              <textarea class="form-control richtextarea" name="request_3" rows="16"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gradient-primary mr-2">Trimite</button>
+            <button class="btn btn-light">Cancel</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}

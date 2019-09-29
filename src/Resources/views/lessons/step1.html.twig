@@ -1,0 +1,30 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h1>{{ lesson.title|raw }}</h1>
+          <div style="margin-top: 20px;">{{ lesson.request|raw }}</div>
+
+          <div style="margin-top: 40px">
+            {{ lesson.request_1|raw }}
+          </div>
+
+          <form method="post" class="forms-sample">
+            <div class="highlight_target" style="position: relative;">
+                <div class="highlight_text" id="highlight_text" style="margin-top: 50px;">
+                  {{ lesson.text|raw }}
+                </div>
+                <button style="display: none; margin-top: 15px;" id="ok_btn"  onclick="return surroundSelection();" class="btn btn-gradient-primary mr-3">OK</button>
+              </div>
+            <input type="hidden" name="highlighted_text" id="highlighted_text" />
+            <button type="submit" class="btn btn-gradient-primary mr-2" style="margin-top: 30px;" onclick="return confirm('{{ lesson.explanations_1|replace({'&nbsp;' : ''})|striptags|e('js') }}');">Verifică răspunsul</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}

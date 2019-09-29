@@ -1,0 +1,41 @@
+# This file is the entry point to configure your own HTTP routes.
+# Files in the routes/ subdirectory configure the routes for your dependencies.
+
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\DefaultController::indexAction' }
+
+register:
+    path: /register
+    defaults: { _controller: 'App\Controller\DefaultController::registerAction' }
+
+lesson_list:
+    path: /admin
+    defaults: { _controller: 'App\Controller\LessonsController::indexAction' }
+
+add_lesson:
+    path: /admin/lessons/add
+    defaults: { _controller: 'App\Controller\LessonsController::addAction' }
+
+success_lesson:
+    path: /admin/lessons/success
+    defaults: { _controller: 'App\Controller\LessonsController::successAction' }
+
+show_lesson_step:
+    path: /lesson/{lesson_id}/{step}
+    defaults: { _controller: 'App\Controller\LessonsController::lessonAction' }
+    requirements:
+        lesson_id: '\d+'
+        step: '\d+'
+
+show_lesson:
+    path: /lesson/{lesson_id}
+    defaults: { _controller: 'App\Controller\LessonsController::lessonAction' }
+    requirements:
+        lesson_id: '\d+'
+
+show_responses:
+    path: /admin/lessons/responses/{lesson_id}
+    defaults: { _controller: 'App\Controller\LessonsController::responsesAction' }
+    requirements:
+        lesson_id: '\d+'

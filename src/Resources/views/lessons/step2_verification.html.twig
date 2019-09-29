@@ -1,0 +1,28 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          {{ lesson.request_2|raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          {{ text|raw }}
+        </div>
+      </div>
+    </div>
+    <div class="col-12 grid-margin stretch-card">
+        <a href="/lesson/{{ lesson.id }}/3">
+          <button type="submit" class="btn btn-gradient-primary mr-2">Mergi la subiectul următor</button>
+        </a>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}

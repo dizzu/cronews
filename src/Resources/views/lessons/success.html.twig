@@ -1,0 +1,25 @@
+{% include('partials/header.html.twig') %}
+<div class="content-wrapper">
+  <div class="page-header">
+    <h3 class="page-title">
+      Adăugați o lecție nouă
+    </h3>
+  </div>
+  <div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <div class="alert alert-success">
+            <strong>Succes!</strong> Lecția a fost creată :)
+          </div>
+
+          <a href="/lesson/{{ id }}">
+            <button type="submit" class="btn btn-gradient-primary mr-2">Mergi la lecție</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- content-wrapper ends -->
+{% include('partials/footer.html.twig') %}
